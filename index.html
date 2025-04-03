@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Job Scheduling Calculator</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
+</head>
+<body>
+    <div>
+        <label for="numCpus">Number of CPUs:</label>
+        <input type="number" id="numCpus" min="1" value="1">
+        
+        <label for="timeQuantum">Time Quantum:</label>
+        <input type="number" id="timeQuantum" min="1" value="1">
+    </div>
+
+    <div>
+        <button onclick="addJob()">Add Job</button>
+        <button onclick="removeLastJob()">Remove Last Job</button>
+        <button onclick="calculateSRTN()">Calculate SRTN</button>
+        <button onclick="calculateRoundRobin()">Calculate Round Robin</button>
+    </div>
+
+    <table id="jobsTable">
+        <thead>
+            <tr>
+                <th>Job</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Turnaround Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Jobs will be added here -->
+        </tbody>
+    </table>
+
+    <div id="averageTurnaround"></div>
+    <div id="chartsContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
